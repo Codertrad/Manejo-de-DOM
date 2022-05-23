@@ -1,0 +1,109 @@
+@import "_reset.scss";
+@import "_fonts.scss";
+
+
+body{
+   background-image: url(../img/5-dots.png);
+   background-position: cover;
+   font-family: $fuente;
+}
+
+
+.titulo{
+   font-size: 2rem;
+   color: $blanco;
+   text-align: center;
+   margin-top: 3rem;
+}
+
+.registro__contenedor{
+   width: 60vw;
+   background-color: $verde-oscuro;
+   margin: 3rem auto;
+   padding-bottom: 1rem;
+   border-radius: .5rem;
+}
+
+.registro__titulo{
+   font-size: 1.2rem;
+   padding-top: 2rem;
+   text-align: center;
+}
+
+.formulario{
+   background-color: $Negro;
+   border-radius: .5rem;
+   margin: 3rem auto;
+   padding: 1.5rem 0;
+   width: 70%;
+   color: $Negro;
+
+   &__name{
+      display: flex;
+      padding: 1.5rem 0;
+      justify-content: space-around;
+
+      &-label{
+         padding: .5rem 0;
+         color: $blanco;
+      }
+
+      &-input{
+         background-color: $verde-melon;
+         border-radius: .5rem;
+         border: none;
+         padding: .5rem 2rem;
+         text-align: center;
+         position: relative;
+         left: .6rem;
+      }
+   }
+   
+   &__password{
+      display: flex;
+      padding: 1.5rem 0;
+      justify-content: space-around;
+
+      &-label{
+         padding: .5rem 0;
+         color: $blanco;
+      }
+
+      &-input{
+         background-color: $verde-melon;
+         border-radius: .5rem;
+         border: none;
+         padding: .5rem 2rem;
+         text-align: center;
+      }
+   }
+
+
+   &__boton{
+      background-color: $verde-melon;
+      margin: 0rem auto;
+      margin-top: 3rem;
+      padding: .5rem 10rem;
+      border-radius: .5rem;
+
+      &:hover{
+         background-color: $verde-lima;
+      }
+   }
+}
+
+input::placeholder{
+   color: rgb(26, 26, 26);
+   color-scheme: $Negro;
+   border: none;
+}
+
+.respuesta__registro{
+   width: 70%;
+   height: 1rem;
+   margin: .2rem auto;
+}
+
+.respuesta__registro p{
+   text-align: center;
+}

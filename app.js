@@ -11,12 +11,19 @@ class CuentaDeUsuario {
 
 //alert("Bienvenido a CERO ESTRES, para poder ingresar a mi agencia de viajes debe registrar un nombre de usuario y contraseña")
 
- //let nombreDeUsuario = prompt("Registre un nombre de usuario:");
- //let contraseniaDeUsuario = prompt("Registe una contraseña:");
+   btn.addEventListener( "click" , ()=>{
+      let nombreDeUsuario = document.getElementById("nombre").value;
+      let contraseniaDeUsuario = document.getElementById("contrasenia").value;
+      const cuentaCreada = new CuentaDeUsuario(nombreDeUsuario,contraseniaDeUsuario);
+      
+      console.log(cuentaCreada)
+      let respuesta = document.getElementById("respuesta");
+      respuesta.innerHTML = `<p>Su Registro ha realizado de manera exitosa!!! Su usuario es: ${cuentaCreada.nombre} y su contraseña es: ${cuentaCreada.constrasenia}</p>`
+      return cuentaCreada      
+   });
 
- const cuentaCreada = new CuentaDeUsuario(nombreDeUsuario,contraseniaDeUsuario);
+   /* Hola Braian, creo que logre cumplir con lo que demandaba la consigna. Sin embargo quiero crear  la interfaz de REGISTRO E INICIO DE SESION para asi seguir con el funcionamiento de la app que en este caso seria un carrito de compras. Con los prompt y alert todo funcionaba pero al agregar eventos e intentar hacer dinamica la web  a traves de inputs el programa solo lo pude desarrollar hasta esta parte ya que no se como retornar el objeto creado dentro de la funcion. Intente de muchas maneras sin embargo no lo logre. para asi seguir con el funcionamiento del programa como comparar los datos en la parte de codigo que aparece mas abajo. No se si en este punto es necesario backend pero me causa una frustracion terrible ya que quiero hacer el ejercicio completo. */
 
- //alert("Se ha registrado correctamente")
 
  //Inicio de Sesion
 
