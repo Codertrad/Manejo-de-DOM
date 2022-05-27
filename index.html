@@ -12,7 +12,9 @@
    <header>
       <h1 class="titulo">INTERACTUANDO CON EL DOM (Agencia de viajes)</h1>
       
-      <div class="registro__contenedor">
+      <div class="contenedor__cajas">
+         <!-- REGISTRO -->
+         <div class="registro__contenedor">
          <h2 class="registro__titulo">Para ingresar al area de ventas debe registrarse en el siguiente formulario:</h2>
 
          <form action="#" class="formulario">
@@ -26,14 +28,42 @@
                <label class="formulario__password-label" for="password">CONTRASEÑA:</label>
                <input class="formulario__password-input" id="contrasenia" type="password" placeholder ="Contraseña">
             </div>
-
+           
             <button class="formulario__boton" id="btn">Registrarse</button>
-         </form>
 
+         </form>
+         
          <div class="respuesta__registro" id="respuesta">
-            
+               <!-- Respuesta Al registrarse, Contenido creado con JS -->
          </div>
 
+         </div>
+
+         <!-- INICIO SESION -->
+         <div class="inicio__contenedor">
+         <h2 class="inicio__titulo">Para ingresar al area de ventas debe iniciar sesion en el siguiente formulario:</h2>
+
+         <form action="#" class="formulario">
+
+            <div class="formulario__name">
+               <label class="formulario__name-label" for="name">USUARIO:</label>
+               <input class="formulario__name-input" name="name" id = "nombreInicio" type="text" placeholder ="Usuario">
+            </div>
+
+            <div class="formulario__password">
+               <label class="formulario__password-label" for="password">CONTRASEÑA:</label>
+               <input class="formulario__password-input" name="password" id="contraseniaInicio" type="password" placeholder ="Contraseña">
+            </div>
+           
+            <button class="formulario__boton" id="btnInicio">Iniciar Sesion</button>
+
+         </form>
+         
+         <div class="respuesta__registro" id="respuesta">
+               <!-- Respuesta Al iniciarSesion, Contenido creado con JS -->
+         </div>
+
+         </div>
       </div>
    </header>
 
