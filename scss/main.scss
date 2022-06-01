@@ -10,6 +10,7 @@ body{
 
 .contenedor__cajas{
    display: flex;
+   justify-content: space-evenly;
 }
 
 
@@ -20,13 +21,24 @@ body{
    margin-top: 3rem;
 }
 
+.descripcion{
+   color: $blanco;
+   text-align: center;
+}
+
+.titulo__botones{
+   color: $blanco;
+   font-size: 1.2rem;
+   text-align: center;
+   margin-top: 3.5rem;
+}
+
 .registro__contenedor{
    //width: 60vw;
    background-color: $verde-oscuro;
    margin: 3rem 3rem;
-   padding-bottom: 1rem;
+   padding: 1rem;
    border-radius: .5rem;
-   //display: none;
 }
 
 .registro__titulo{
@@ -72,6 +84,7 @@ body{
       &-label{
          padding: .5rem 0;
          color: $blanco;
+         margin-right: .5rem;
       }
 
       &-input{
@@ -120,7 +133,7 @@ input::placeholder{
    //width: 60vw;
    background-color: $verde-oscuro;
    margin: 3rem 3rem;
-   padding-bottom: 1rem;
+   padding: 1rem;
    border-radius: .5rem;
 }
 
@@ -129,4 +142,35 @@ input::placeholder{
    font-size: 1.2rem;
    padding-top: 2rem;
    text-align: center;
+}
+
+.active{
+   display:none;
+}
+.contenedor__botones{
+   display: flex;
+   justify-content: center;
+   margin: .5rem 0;
+}
+
+.iniciar__btn{
+   background-color: $verde-melon;
+   margin: 1rem 2rem;
+   padding: 1rem 3rem;
+   border-radius: .3rem;
+   font-size: 1.2rem;
+}
+
+.registrar__btn{
+   background-color: $verde-melon;
+   margin: 1rem 2rem;
+   padding: 1rem 3rem;
+   border-radius: .3rem;
+   font-size: 1.2rem;
+}
+
+.respuesta__ingreso{
+   text-align: center;
+   color: $verde-lima;
+   font-size: 2.5rem;
 }

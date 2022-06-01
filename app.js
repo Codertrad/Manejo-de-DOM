@@ -8,6 +8,28 @@ class CuentaDeUsuario {
     this.constrasenia = contrasenia;
   }
 }
+//------------------------------------Funciones de agregar o quitar ventanas de inicio o registro de usuario----------------------------------------------
+  //elimina el formulario de registro pero sus datos quedan almacenados
+  let botonIniciar = document.getElementById("btn__inicio")
+  let botonRegistrar = document.getElementById("btn__registro")
+  let contenedorRegistro = document.getElementById("contenedorRegistro");
+  let contenedorInicio = document.getElementById("contenedorInicio");
+
+  botonIniciar.addEventListener("click",mostrarInicio);
+  botonRegistrar.addEventListener("click",mostrarRegistro)
+
+
+function mostrarInicio() {
+  contenedorInicio.classList.remove("active");
+  contenedorRegistro.classList.add("active")
+}
+
+function mostrarRegistro(){
+  contenedorRegistro.classList.remove("active");
+  contenedorInicio.classList.add("active")
+}
+
+
 
 //------------------------------------Registro de sesion----------------------------------------------
 
@@ -22,10 +44,14 @@ let botonRegistro = btn.addEventListener("click", () => {
   );
 
   let respuesta = document.getElementById("respuesta");
-  respuesta.innerHTML = `<p>Su Registro ha realizado de manera exitosa!!! Su usuario es: ${cuentaCreada.nombre} y su contraseña es: ${cuentaCreada.constrasenia}</p>`;
+  respuesta.innerHTML = `<p>Su Registro ha realizado de manera exitosa!!! </p>`;
+  
 });
 
+
 //------------------------------------Inicio de Sesion----------------------------------------------
+
+
 
 let botonInicio = btnInicio.addEventListener("click", () => {
 
@@ -44,21 +70,25 @@ let botonInicio = btnInicio.addEventListener("click", () => {
      JSON.stringify(inicioSesion)
    );
 
-      //variable con los datos almacenados de registro de sesion:
-      let usuarioRegistrado = sessionStorage.getItem("registroDeUsuario");
-      //variable con los datos almacenados de inicio de sesion:
-      let inicioDeSesion = sessionStorage.getItem("inicioDeUsuario");
-   
-        if (usuarioRegistrado !== inicioDeSesion){
-          alert("EL NOMBRE DE USUARIO ES INCORRECTO!!!");
-       }else{
-         alert("USTED A INGRESADO CORRECTAMENTE")
-       }
+    validarDatos()
 
 });
 //------------------------------------Validacion de datos----------------------------------------------
    
-
+function validarDatos (){
+  //variable con los datos almacenados de registro de sesion:
+  let usuarioRegistrado = sessionStorage.getItem("registroDeUsuario");
+  //variable con los datos almacenados de inicio de sesion:
+  let inicioDeSesion = sessionStorage.getItem("inicioDeUsuario");
+     
+    if (usuarioRegistrado !== inicioDeSesion){
+      alert("Los datos ingresados son incorrectos, Vuelva a iniciar sesion.")
+      mostrarInicio()
+    }else{
+      let respuestaInicio = document.getElementById("respuestaIngreso")
+      respuestaInicio.innerText = "¡¡Bienvenido a mi agencia de viajes, proximamente encontraras todos los paquetes turisticos!!"
+    }
+}
 
 
 

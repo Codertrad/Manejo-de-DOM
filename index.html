@@ -11,10 +11,19 @@
 
    <header>
       <h1 class="titulo">INTERACTUANDO CON EL DOM (Agencia de viajes)</h1>
-      
+      <p class="descripcion">Para Ingresar al area de ventas debera crear una cuenta e iniciar sesion</p>
+
+      <h2 class="titulo__botones">¿Que accion desea realizar?</h2>
+      <div class="contenedor__botones">
+         <button class="iniciar__btn" id="btn__inicio">Iniciar Sesion</button>
+         <button class="registrar__btn" id="btn__registro">Registrarse</button>
+      </div>
+      <h3 class="respuesta__ingreso" id="respuestaIngreso"></h3>
+
+
       <div class="contenedor__cajas">
          <!-- REGISTRO -->
-         <div class="registro__contenedor">
+         <div class="registro__contenedor active" id="contenedorRegistro">
          <h2 class="registro__titulo">Para ingresar al area de ventas debe registrarse en el siguiente formulario:</h2>
 
          <form action="#" class="formulario">
@@ -40,8 +49,8 @@
          </div>
 
          <!-- INICIO SESION -->
-         <div class="inicio__contenedor">
-         <h2 class="inicio__titulo">Para ingresar al area de ventas debe iniciar sesion en el siguiente formulario:</h2>
+         <div class="inicio__contenedor active" id="contenedorInicio">
+         <h2 class="inicio__titulo">Por favor inicie sesion para continuar:</h2>
 
          <form action="#" class="formulario">
 
