@@ -116,13 +116,15 @@ input::placeholder{
    border: none;
 }
 
-.respuesta__registro{
+.respuesta__evento{
    width: 70%;
    margin: .2rem auto;
 }
 
-.respuesta__registro p{
+.respuesta__evento p{
    text-align: center;
+   color: $verde-lima;
+   font-size: 1.3rem;
 }
 
 

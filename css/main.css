@@ -198,12 +198,14 @@ input::placeholder {
   color-scheme: #010D00;
   border: none; }
 
-.respuesta__registro {
+.respuesta__evento {
   width: 70%;
   margin: .2rem auto; }
 
-.respuesta__registro p {
-  text-align: center; }
+.respuesta__evento p {
+  text-align: center;
+  color: #7DBF3B;
+  font-size: 1.3rem; }
 
 .inicio__contenedor {
   background-color: #567339;

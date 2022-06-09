@@ -9,70 +9,106 @@ class CuentaDeUsuario {
   }
 }
 //------------------------------------Funciones de agregar o quitar ventanas de inicio o registro de usuario----------------------------------------------
-  //elimina el formulario de registro pero sus datos quedan almacenados
+  //Muestra o elimina ventanas segun la necesidad del usuario (registrarse o iniciar sesion)
+
+
+  //variables botones y contenedores
   let botonIniciar = document.getElementById("btn__inicio")
   let botonRegistrar = document.getElementById("btn__registro")
   let contenedorRegistro = document.getElementById("contenedorRegistro");
   let contenedorInicio = document.getElementById("contenedorInicio");
 
+
+  //eventos de click en botones inicio o registro
   botonIniciar.addEventListener("click",mostrarInicio);
   botonRegistrar.addEventListener("click",mostrarRegistro)
 
 
-function mostrarInicio() {
-  contenedorInicio.classList.remove("active");
-  contenedorRegistro.classList.add("active")
-}
+  //Funciones de mostrar o quitar ventanas
+  function mostrarInicio() {
+    contenedorInicio.classList.remove("active");
+    contenedorRegistro.classList.add("active");
+  }
 
-function mostrarRegistro(){
-  contenedorRegistro.classList.remove("active");
-  contenedorInicio.classList.add("active")
-}
+  function mostrarRegistro(){
+    contenedorRegistro.classList.remove("active");
+    contenedorInicio.classList.add("active")
+  }
 
 
 
 //------------------------------------Registro de sesion----------------------------------------------
+//Variable del boton
+let botonRegistro = document.getElementById("btnRegistro");
+//Evento al presionar Registrarse
+botonRegistro.addEventListener("click",crearUsuario);
+//Funcion para crear usuario
+function crearUsuario (){
 
-let botonRegistro = btn.addEventListener("click", () => {
-  let nombreDeUsuario = document.getElementById("nombre").value;
-  let contraseniaDeUsuario = document.getElementById("contrasenia").value;
-  cuentaCreada = new CuentaDeUsuario(nombreDeUsuario, contraseniaDeUsuario);
-  //Se almacenan los datos de registro en un sessionStorage
-  window.sessionStorage.setItem(
+  //Variables que obtienen los valores de los input
+  let nombreRegistro = document.querySelector("#nombre").value;
+  let contraseniaRegistro = document.querySelector("#contrasenia").value;
+  //Crea la cuenta de usuario a partir de un objeto constructor
+  cuentaCreada = new CuentaDeUsuario(nombreRegistro,contraseniaRegistro);
+  //Almacena los datos de la cuenta en un session storage
+  sessionStorage.setItem(
     "registroDeUsuario",
     JSON.stringify(cuentaCreada)
   );
+  //Agrega la clase al contenedor para desaparecer la ventana de registro
+  contenedorRegistro.classList.add("active")
+  //llama a la funcion que muestra el mensaje de cuenta creada
+  mostrarRespuesta();
+}
 
-  let respuesta = document.getElementById("respuesta");
-  respuesta.innerHTML = `<p>Su Registro ha realizado de manera exitosa!!! </p>`;
-  
-});
+//------------------------------------Respuestas registro/inicio----------------------------------------------
 
+//Funcion que muestra un mensaje al registrarse el usuario
+function mostrarRespuesta(){
+  let respuesta = document.getElementById("respuestaEvento");
+  respuesta.innerHTML = `<p>Su cuenta ha sido creada de manera exitosa!!! </p>`;
+}
+//Funcion que borra el mensaje de cuenta creada al seleccionar iniciar sesion
+function borrarRespuesta(){
+  let respuesta = document.getElementById("respuestaEvento");
+  respuesta.classList.add("active")
+}
+
+function respuestaInicioMal(){
+  let datosIncorrectos = document.getElementById("respuestaEvento");
+  datosIncorrectos.innerHTML = `<p>Los datos ingresados son incorrectos,Digitelos correctamente</p>`;
+}
+
+function respuestaInicioBien(){
+  let datosCorrectos = document.getElementById("respuestaEvento");
+  datosCorrectos.innerHTML = `<p>Sesion iniciada correctamente</p>`;
+}
 
 //------------------------------------Inicio de Sesion----------------------------------------------
 
+let botonInicio = document.getElementById("btnInicio");
 
+botonInicio.addEventListener("click", iniciarSesion);
 
-let botonInicio = btnInicio.addEventListener("click", () => {
-
+function iniciarSesion(){
   //variables de inputs
   let nombreInicioSesion = document.getElementById("nombreInicio").value;
   let contraseniaInicioSesion = document.getElementById("contraseniaInicio").value;
 
   //creacion de nuevo objeto para comparar
-  inicioSesion = new CuentaDeUsuario(
+  inicioCreado = new CuentaDeUsuario(
     nombreInicioSesion,
     contraseniaInicioSesion
   );
   //almacenamiento en sessionStorage
   sessionStorage.setItem(
      "inicioDeUsuario", 
-     JSON.stringify(inicioSesion)
+     JSON.stringify(inicioCreado)
    );
 
     validarDatos()
+}
 
-});
 //------------------------------------Validacion de datos----------------------------------------------
    
 function validarDatos (){
@@ -82,11 +118,9 @@ function validarDatos (){
   let inicioDeSesion = sessionStorage.getItem("inicioDeUsuario");
      
     if (usuarioRegistrado !== inicioDeSesion){
-      alert("Los datos ingresados son incorrectos, Vuelva a iniciar sesion.")
-      mostrarInicio()
+      respuestaInicioMal()
     }else{
-      let respuestaInicio = document.getElementById("respuestaIngreso")
-      respuestaInicio.innerText = "¡¡Bienvenido a mi agencia de viajes, proximamente encontraras todos los paquetes turisticos!!"
+      respuestaInicioBien()
     }
 }
 

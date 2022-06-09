@@ -18,62 +18,57 @@
          <button class="iniciar__btn" id="btn__inicio">Iniciar Sesion</button>
          <button class="registrar__btn" id="btn__registro">Registrarse</button>
       </div>
-      <h3 class="respuesta__ingreso" id="respuestaIngreso"></h3>
 
+      <div class="respuesta__evento" id="respuestaEvento">
+         <!-- Respuesta Al registrarse o iniciar sesion, Contenido creado con JS -->
+      </div>
 
       <div class="contenedor__cajas">
          <!-- REGISTRO -->
          <div class="registro__contenedor active" id="contenedorRegistro">
          <h2 class="registro__titulo">Para ingresar al area de ventas debe registrarse en el siguiente formulario:</h2>
 
-         <form action="#" class="formulario">
+         <form action="#" class="formulario" autocomplete="off">
 
             <div class="formulario__name">
-               <label class="formulario__name-label" for="name">USUARIO:</label>
-               <input class="formulario__name-input" id = "nombre" type="text" placeholder ="Usuario">
+               <label class="formulario__name-label" for="nombre">USUARIO:</label>
+               <input class="formulario__name-input" id = "nombre" type="text" placeholder ="Usuario" required>
             </div>
 
             <div class="formulario__password">
-               <label class="formulario__password-label" for="password">CONTRASEÑA:</label>
-               <input class="formulario__password-input" id="contrasenia" type="password" placeholder ="Contraseña">
+               <label class="formulario__password-label" for="contrasenia">CONTRASEÑA:</label>
+               <input class="formulario__password-input" id="contrasenia" type="password" placeholder ="Contraseña" required>
             </div>
            
-            <button class="formulario__boton" id="btn">Registrarse</button>
+            <button class="formulario__boton" id="btnRegistro">Registrarse</button>
 
          </form>
-         
-         <div class="respuesta__registro" id="respuesta">
-               <!-- Respuesta Al registrarse, Contenido creado con JS -->
-         </div>
-
          </div>
 
          <!-- INICIO SESION -->
          <div class="inicio__contenedor active" id="contenedorInicio">
          <h2 class="inicio__titulo">Por favor inicie sesion para continuar:</h2>
 
-         <form action="#" class="formulario">
+         <form action="#" class="formulario" autocomplete="off">
 
             <div class="formulario__name">
                <label class="formulario__name-label" for="name">USUARIO:</label>
-               <input class="formulario__name-input" name="name" id = "nombreInicio" type="text" placeholder ="Usuario">
+               <input class="formulario__name-input" name="name" id = "nombreInicio" type="text" placeholder ="Usuario" required>
             </div>
 
             <div class="formulario__password">
                <label class="formulario__password-label" for="password">CONTRASEÑA:</label>
-               <input class="formulario__password-input" name="password" id="contraseniaInicio" type="password" placeholder ="Contraseña">
+               <input class="formulario__password-input" name="password" id="contraseniaInicio" type="password" placeholder ="Contraseña" required>
             </div>
            
             <button class="formulario__boton" id="btnInicio">Iniciar Sesion</button>
 
          </form>
-         
-         <div class="respuesta__registro" id="respuesta">
-               <!-- Respuesta Al iniciarSesion, Contenido creado con JS -->
-         </div>
 
          </div>
       </div>
+
+
    </header>
 
 
