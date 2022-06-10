@@ -58,13 +58,13 @@ function crearUsuario (){
   //Agrega la clase al contenedor para desaparecer la ventana de registro
   contenedorRegistro.classList.add("active")
   //llama a la funcion que muestra el mensaje de cuenta creada
-  mostrarRespuesta();
+  swal("Bien Hecho!", "Tu cuenta ha sido registrada exitosamente!!", "success");
 }
 
 //------------------------------------Respuestas registro/inicio----------------------------------------------
 
 //Funcion que muestra un mensaje al registrarse el usuario
-function mostrarRespuesta(){
+/*function mostrarRespuesta(){
   let respuesta = document.getElementById("respuestaEvento");
   respuesta.innerHTML = `<p>Su cuenta ha sido creada de manera exitosa!!! </p>`;
 }
@@ -82,7 +82,7 @@ function respuestaInicioMal(){
 function respuestaInicioBien(){
   let datosCorrectos = document.getElementById("respuestaEvento");
   datosCorrectos.innerHTML = `<p>Sesion iniciada correctamente</p>`;
-}
+}*/
 
 //------------------------------------Inicio de Sesion----------------------------------------------
 
@@ -118,9 +118,9 @@ function validarDatos (){
   let inicioDeSesion = sessionStorage.getItem("inicioDeUsuario");
      
     if (usuarioRegistrado !== inicioDeSesion){
-      respuestaInicioMal()
+      swal("Error!!", "Los datos ingresados son incorrectos", "error");
     }else{
-      respuestaInicioBien()
+      swal("Ingreso realizado", "se ha iniciado sesion correctamente", "success");
     }
 }
 
