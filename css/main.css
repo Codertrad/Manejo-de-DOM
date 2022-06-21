@@ -116,7 +116,8 @@ body {
 body {
   background-image: url(../img/5-dots.png);
   background-position: cover;
-  font-family: "ubuntu", sans-serif; }
+  font-family: "ubuntu", sans-serif;
+  color: #ffff; }
 
 .contenedor__cajas {
   display: flex;
@@ -244,3 +245,77 @@ input::placeholder {
   text-align: center;
   color: #7DBF3B;
   font-size: 2.5rem; }
+
+.seccion__ver-planes {
+  text-align: center;
+  margin-top: 3rem; }
+
+.titulo__ingreso {
+  font-size: 2rem; }
+
+.boton__ver-planes {
+  margin: 1rem auto;
+  padding: .5rem 2rem;
+  background-color: #7DBF3B;
+  border-radius: 1rem; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  margin: 3rem 5rem;
+  row-gap: 1.5rem;
+  column-gap: 1.5rem; }
+  .cards__item {
+    min-width: 350px;
+    display: grid;
+    border: 1px solid #d3d3d3c9;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); }
+    .cards__item-title {
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 700;
+      padding: .7rem 0;
+      background-color: #567339; }
+    .cards__item-content {
+      display: flex;
+      text-align: center;
+      justify-content: center; }
+      .cards__item-content__columns {
+        width: 100%;
+        padding: 1rem 0; }
+        .cards__item-content__columns-h3 {
+          font-weight: 700; }
+        .cards__item-content__columns-p {
+          font-size: 1.8rem;
+          font-weight: 900;
+          color: #ff9500;
+          padding: 0.5rem 0; }
+        .cards__item-content__columns-ul {
+          padding: .5rem 0;
+          font-weight: 300; }
+    .cards__item-price {
+      text-align: center;
+      font-size: 2.0rem;
+      padding: .5rem 0;
+      font-weight: bold;
+      border-top: 1px solid #d3d3d3c9;
+      border-bottom: 1px solid #d3d3d3c9; }
+      .cards__item-price_b {
+        font-size: .8rem;
+        font-weight: 400; }
+    .cards__item-buttons {
+      font-weight: 700;
+      display: flex;
+      text-align: center;
+      padding: 1rem 0;
+      justify-content: space-evenly; }
+      .cards__item-buttons_detalles {
+        border-radius: 10px;
+        padding: .5rem 1rem;
+        background-color: #567339;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2); }
+      .cards__item-buttons_comprar {
+        border-radius: 10px;
+        padding: .5rem 1rem;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2); }

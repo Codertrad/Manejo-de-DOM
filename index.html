@@ -9,7 +9,7 @@
 </head>
 <body>
 
-   <header>
+   <header id="header__container" class="">
       <h1 class="titulo">INTERACTUANDO CON EL DOM (Agencia de viajes)</h1>
       <p class="descripcion">Para Ingresar al area de ventas debera crear una cuenta e iniciar sesion</p>
 
@@ -67,13 +67,15 @@
 
          </div>
       </div>
-
-
    </header>
 
+   <div class="seccion__ver-planes active" id="contenedor__ver-planes">
+      <h2 class="titulo__ingreso">Bienvenido/a, Usted ha ingresado correctamente:</h2>
+      <button class="boton__ver-planes" id="btnMostrarPlanes">Ver planes turisticos</button>
+   </div>
 
-   <main>
-
+   <main class="">
+      <section class="cards" id="listadoCards"></section>
    </main>
 
 

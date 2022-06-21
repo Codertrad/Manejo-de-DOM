@@ -17,6 +17,8 @@ class CuentaDeUsuario {
   let botonRegistrar = document.getElementById("btn__registro")
   let contenedorRegistro = document.getElementById("contenedorRegistro");
   let contenedorInicio = document.getElementById("contenedorInicio");
+  let contenedorLoginRegistro = document.getElementById("header__container");
+  let contenedorAccesoPlanes = document.getElementById("contenedor__ver-planes")
 
 
   //eventos de click en botones inicio o registro
@@ -61,28 +63,6 @@ function crearUsuario (){
   swal("Bien Hecho!", "Tu cuenta ha sido registrada exitosamente!!", "success");
 }
 
-//------------------------------------Respuestas registro/inicio----------------------------------------------
-
-//Funcion que muestra un mensaje al registrarse el usuario
-/*function mostrarRespuesta(){
-  let respuesta = document.getElementById("respuestaEvento");
-  respuesta.innerHTML = `<p>Su cuenta ha sido creada de manera exitosa!!! </p>`;
-}
-//Funcion que borra el mensaje de cuenta creada al seleccionar iniciar sesion
-function borrarRespuesta(){
-  let respuesta = document.getElementById("respuestaEvento");
-  respuesta.classList.add("active")
-}
-
-function respuestaInicioMal(){
-  let datosIncorrectos = document.getElementById("respuestaEvento");
-  datosIncorrectos.innerHTML = `<p>Los datos ingresados son incorrectos,Digitelos correctamente</p>`;
-}
-
-function respuestaInicioBien(){
-  let datosCorrectos = document.getElementById("respuestaEvento");
-  datosCorrectos.innerHTML = `<p>Sesion iniciada correctamente</p>`;
-}*/
 
 //------------------------------------Inicio de Sesion----------------------------------------------
 
@@ -106,144 +86,86 @@ function iniciarSesion(){
      JSON.stringify(inicioCreado)
    );
 
-    validarDatos()
-}
-
-//------------------------------------Validacion de datos----------------------------------------------
+   //Agrega la clase al contenedor para desaparecer la ventana de Inicio
+   contenedorInicio.classList.add("active")
    
-function validarDatos (){
-  //variable con los datos almacenados de registro de sesion:
-  let usuarioRegistrado = sessionStorage.getItem("registroDeUsuario");
-  //variable con los datos almacenados de inicio de sesion:
-  let inicioDeSesion = sessionStorage.getItem("inicioDeUsuario");
-     
-    if (usuarioRegistrado !== inicioDeSesion){
-      swal("Error!!", "Los datos ingresados son incorrectos", "error");
-    }else{
+
+   validarDatos()
+  }
+  
+  //------------------------------------Validacion de datos----------------------------------------------
+  
+  function validarDatos (){
+    //variable con los datos almacenados de registro de sesion:
+    let usuarioRegistrado = sessionStorage.getItem("registroDeUsuario");
+    //variable con los datos almacenados de inicio de sesion:
+    let inicioDeSesion = sessionStorage.getItem("inicioDeUsuario");
+    
+    if (usuarioRegistrado === inicioDeSesion){
       swal("Ingreso realizado", "se ha iniciado sesion correctamente", "success");
-    }
-}
-
-
-
-
-//Planes de cero estres
-
-class Plan {
-  constructor(nombrePlan, duracionPlan, precioPlan) {
-    this.nombrePlan = nombrePlan;
-    this.duracionPlan = duracionPlan;
-    this.precioPlan = precioPlan;
-  }
-}
-
-const adrenalinaExtrema = new Plan(
-  "Adrenalina Extrema",
-  "2 dias y 1 noche",
-  160000
-);
-const planFestivo = new Plan("Plan festivo", "2 dias y 1 noche", 120000);
-const pasadiaExtremo = new Plan("Pasadia extremo", "1 dia", 100000);
-
-// Funcion elegir planes creados
-
-function elegirPlanes() {
-  alert(
-    "Los planes que tenemos disponibles para usted son: \n\n Plan numero 1 \n  Nombre: " +
-      adrenalinaExtrema.nombrePlan +
-      "\n  Duracion: " +
-      adrenalinaExtrema.duracionPlan +
-      "\n  Precio " +
-      adrenalinaExtrema.precioPlan +
-      " Valor x pesona" +
-      "\n\n Plan numero 2 \n  Nombre: " +
-      planFestivo.nombrePlan +
-      "\n  Duracion: " +
-      planFestivo.duracionPlan +
-      "\n  Precio " +
-      planFestivo.precioPlan +
-      " Valor x persona" +
-      "\n\n Plan numero 3 \n  Nombre: " +
-      pasadiaExtremo.nombrePlan +
-      "\n  Duracion: " +
-      pasadiaExtremo.duracionPlan +
-      "\n  Precio " +
-      pasadiaExtremo.precioPlan +
-      " Valor por persona"
-  );
-
-  let planElegido = Number(
-    prompt(
-      "Ingrese el numero del plan que desea adquirir: \n\n 1 : Adrenallina extrema. \n 2 : Plan Festivo \n 3 : Pasadia extremo"
-    )
-  );
-
-  //Creando a partir de nombres digitados un valor total, un array para mostrar nombres de viajeros y con .lenght canculamos el valor total para x cantidad de viajeros
-
-  let separador = ",";
-  let nombresViajeros = prompt(
-    "Ingrese los nombres completos de todos los viajeros para realizar la reserva (cada viajero debe estar separado por una coma)"
-  );
-  let nombresEnArray = nombresViajeros.split(separador);
-  let cantidadViajeros = nombresEnArray.length;
-
-  if (planElegido === 1) {
-    let totalPrecio = adrenalinaExtrema.precioPlan * cantidadViajeros;
-    alert(
-      "Usted ha elegido el plan: \n " +
-        adrenalinaExtrema.nombrePlan +
-        " para " +
-        cantidadViajeros +
-        " personas, con un valor total de " +
-        totalPrecio +
-        " COP."
-    );
-  } else if (planElegido === 2) {
-    let totalPrecio = planFestivo.precioPlan * cantidadViajeros;
-    alert(
-      "Usted ha elegido el plan: \n " +
-        planFestivo.nombrePlan +
-        " para " +
-        cantidadViajeros +
-        " personas, con un valor total de " +
-        totalPrecio +
-        " COP."
-    );
-  } else if (planElegido === 3) {
-    let totalPrecio = pasadiaExtremo.precioPlan * cantidadViajeros;
-    alert(
-      "Usted ha elegido el plan: \n " +
-        pasadiaExtremo.nombrePlan +
-        " para " +
-        cantidadViajeros +
-        " personas, con un valor total de " +
-        totalPrecio +
-        " COP."
-    );
-  } else {
-    alert("El dato ingresado es incorrecto!");
-    elegirPlanes();
-  }
-
-  let opciones = prompt(
-    "Seleccione una opcion: \n\n 1 : COMPRAR AHORA \n 2 : ELEGIR PLANES NUEVAMENTE \n 3 : TERMINAR PROCESO"
-  );
-
-  while (opciones !== "3") {
-    if (opciones === "1") {
-      alert("La reserva para:");
-      nombresEnArray.forEach((viajeros) => alert(viajeros));
-      alert(
-        "Ha sido exitosa!!, Recuerda llegar al lugar puntualmente. \n\n Gracias por tu compra!!"
-      );
-      opciones = "3";
-    } else if (opciones === "2") {
-      elegirPlanes();
-    } else {
-      alert("El dato ingresado es incorrecto el proceso ha terminado!!");
-      opciones = "3";
+      contenedorLoginRegistro.classList.add("active");
+      contenedorAccesoPlanes.classList.remove("active");
+    }else{
+      swal("Error!!", "Los datos ingresados son incorrectos", "error");
     }
   }
-}
 
-//elegirPlanes();
+  //------------------------------------Fetch y planes turisticos----------------------------------------------
+
+  async function obtenerPlanes(){
+    const planes = await fetch("./planes.json")
+      .then((response) => response.json())
+      .then((data) => data);
+    return planes;
+  }
+
+  function mostrarPlanes(planes){
+      const listado = document.getElementById("listadoCards");
+      listado.innerHTML = "";
+      planes.forEach((plan) => {
+        const {nombre, precio, img } = plan;
+        const planHTML = `
+        <div class="cards__item">
+             <div class="cards__item-img">
+                 <img src="${img}" alt="">
+             </div>
+             <h2 class="cards__item-title">${nombre}</h2>
+             <div class="cards__item-content">
+                 <div class="cards__item-content__columns">
+                     <h3 class="cards__item-content__columns-h3"> Actividades</h3>
+                      <ul class="cards__item-content__columns-ul">
+                          <li actividad__1> actividad 1</li>
+                          <li actividad__1> actividad 2</li>
+                          <li actividad__1> actividad 3</li>
+                          <li actividad__1> actividad 4</li>
+                      </ul>
+                </div>
+                <div class="cards__item-content__columns">
+                    <h3 class="cards__item-content__columns-h3">Duración</h3>
+                    <p class="cards__item-content__columns-p">1 DIA</p>
+                </div>
+             </div>
+             <div class="cards__item-price">
+                 <p>${precio}</p>
+                 <b class="cards__item-price_b">*por persona</b>
+             </div>
+             <div class="cards__item-buttons">
+                 <a href="#" class="cards__item-buttons_detalles">Agregar al carrito</a>
+             </div>
+         </div>`;
+         listado.innerHTML += planHTML;
+      });
+  }
+
+  function botonMostrarPlanes (){
+    document.getElementById("btnMostrarPlanes").addEventListener("click", async () => {
+      const planes = await obtenerPlanes();
+      mostrarPlanes(planes)
+    })
+  }
+  
+  botonMostrarPlanes();
+
+
+
+

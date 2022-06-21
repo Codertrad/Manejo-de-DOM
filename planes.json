@@ -1,0 +1,55 @@
+[
+   {
+      "id": 1,
+      "nombre": "1 dia",
+      "precio": 1500,
+      "img": "./img/canopy_1.jpg"
+   },
+   {
+      "id": 2,
+      "nombre": "2 dias",
+      "precio": 2500,
+      "img": "./img/rafting2.jpg"
+   },
+   {
+      "id": 3,
+      "nombre": "3 dias",
+      "precio": 3200,
+      "img": "./img/torrentismo.jpg" 
+   },
+   {
+      "id": 4,
+      "nombre": "4 dia",
+      "precio": 1500,
+      "img": "./img/canopy_1.jpg"
+   },
+   {
+      "id": 5,
+      "nombre": "5 dias",
+      "precio": 2500,
+      "img": "./img/rafting2.jpg"
+   },
+   {
+      "id": 6,
+      "nombre": "6 dias",
+      "precio": 3200,
+      "img": "./img/torrentismo.jpg" 
+   },{
+      "id": 7,
+      "nombre": "7 dia",
+      "precio": 1500,
+      "img": "./img/canopy_1.jpg"
+   },
+   {
+      "id": 8,
+      "nombre": "8 dias",
+      "precio": 2500,
+      "img": "./img/rafting2.jpg"
+   },
+   {
+      "id": 9,
+      "nombre": "9 dias",
+      "precio": 3200,
+      "img": "./img/torrentismo.jpg" 
+   }
+]

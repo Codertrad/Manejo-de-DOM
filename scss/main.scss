@@ -6,6 +6,7 @@ body{
    background-image: url(../img/5-dots.png);
    background-position: cover;
    font-family: $fuente;
+   color: $blanco;
 }
 
 .contenedor__cajas{
@@ -176,3 +177,130 @@ input::placeholder{
    color: $verde-lima;
    font-size: 2.5rem;
 }
+// ---------------------------------------------------------------------------SECCION INGRESO-----------------------------------------------------------
+
+.seccion__ver-planes {
+   text-align: center;
+   margin-top: 3rem;
+}
+.titulo__ingreso{
+   font-size: 2rem;
+}
+
+.boton__ver-planes{
+   margin: 1rem auto;
+   padding: .5rem 2rem;
+   background-color: $verde-lima;
+   border-radius: 1rem;
+
+}
+
+// ---------------------------------------------------------------------------CARDS PLANES-----------------------------------------------------------
+
+.cards{
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-template-rows: repeat(3, 1fr);
+   margin: 3rem 5rem;
+   row-gap: 1.5rem;
+   column-gap: 1.5rem;
+
+   &__item{
+      min-width:350px;
+      display: grid;
+      border: 1px solid #d3d3d3c9;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.10);
+
+      &-img{
+         //solucionar desbordamiento
+         //height: 165px;
+      }
+
+      &-title{
+         text-align: center;
+         font-size: 1.8rem;
+         font-weight: 700;
+         padding: .7rem 0;
+         background-color:$verde-oscuro;
+         //color: $dark__black;
+      }
+
+      &-content{
+         display: flex;
+         text-align: center;
+         justify-content: center;
+
+         &__columns{
+            width: 100%;
+            padding: 1rem 0;
+
+            &-h3{
+               font-weight:700;
+            }
+
+            &-p{
+               font-size: 1.8rem;
+               font-weight: 900;
+               color: #ff9500;
+               padding: 0.5rem 0;
+            }
+
+            &-ul{
+               padding: .5rem 0;
+               font-weight: 300;
+            }
+         }
+      }
+
+      &-price{
+         //font-family: $principal;
+         text-align: center;
+         font-size: 2.0rem;
+         padding: .5rem 0;
+         font-weight: bold;
+         border-top: 1px solid #d3d3d3c9;
+         border-bottom: 1px solid #d3d3d3c9;
+
+         &_b{
+            font-size: .8rem;
+            font-weight: 400;
+         }
+      }
+
+      &-buttons{
+         //font-family: $principal;
+         font-weight: 700;
+         display: flex;
+         text-align: center;
+         padding: 1rem 0;
+         justify-content: space-evenly;
+
+         &_detalles{
+            border-radius: 10px;
+            padding: .5rem 1rem;
+            background-color: $verde-oscuro;
+            //color: #000;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.20);
+
+            &:hover{
+               //background-color: $dark__orange;
+            }
+         }
+
+         &_comprar{
+            border-radius: 10px;
+            padding: .5rem 1rem;
+            //background-color: $light__green;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.20);
+
+            &:hover{
+               //background-color: $dark__green;
+            }
+         }
+
+      }
+   }
+}
+
+
+
